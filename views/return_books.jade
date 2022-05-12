@@ -1,0 +1,16 @@
+extends  layout 
+block content 
+    .container
+      h2.text-center Login
+      form.form-group(method="post")
+        label(for='book_id') Book id
+        input.form-control(type='text' name='bookid' id='' aria-describedby='helpId' placeholder="Enter the bookid" )
+        small#helpId.form-text.text-muted Help text
+        button.btn.btn-primary.add Return
+        if message=="w"
+            p(style="color:red") Wrong Book id
+        if message=="r"
+            p(style="color:red") Book Already in the Library
+        if message=="n"
+            p(style="color:red") Book Was Not Rented By This Account
+        

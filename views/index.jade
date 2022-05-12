@@ -1,0 +1,30 @@
+extends layout.jade
+
+block content
+ 
+  .container
+    h2.text-center.mb-5.mt-2 List of Books
+    table.table.table-resposive.table-bordered
+      thead.thead-dark
+        tr
+          th Id Number
+          th Book No.
+          th Book Name
+          th Avalaibility
+          th Actions
+      tbody
+        - var x=1
+        each i in data
+          tr
+            td=x          
+            td=i.book_id 
+            td=i.book_name
+            td=i.avalaibility 
+            td 
+              if i.avalaibility=="Yes" || i.avalaibility=="YES"
+                button.btn.btn-success(onclick="location.href='/rent/#{i.book_id}'") Rent
+              else 
+                button.btn.btn-secondary.disabled(style="cursor:not-allowed") Rented
+              if role=='admin'
+                button.btn.btn-danger.ml-3(onclick="if(confirm('Do You want to delete #{i.book_name}?')==true) location.href='/books/delete?id=#{i._id}';") Delete
+          -x=x+1

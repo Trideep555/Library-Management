@@ -1,0 +1,13 @@
+extends  layout 
+block content 
+  .container
+      h2.text-center Login
+      form.form-group(method="post")
+        label(for='name') Name
+        input.form-control(type='text' name='username' id='' aria-describedby='helpId' placeholder='Enter Name')
+        label(for='phone') Phone Number
+        input.form-control(type='phone' name='userphno' id='' aria-describedby='helpId' placeholder='Enter Phone Number')
+        label(for='Password') Password
+        input.form-control(type='password' name='userpass' id='' aria-describedby='helpId' placeholder='Enter Password')
+        button.btn.btn-primary Register
+    

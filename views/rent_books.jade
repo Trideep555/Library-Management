@@ -1,0 +1,16 @@
+extends  layout 
+block content 
+    .container
+      h2.text-center Login
+      form.form-group(method="post")
+        label(for='name') Name
+        input.form-control(type='text' name='name' id='' aria-describedby='helpId' placeholder='Enter Your Name')
+        small#helpId.form-text.text-muted Help text
+        label(for='book_id') Book id
+        input.form-control(type='text' name='id' id='' aria-describedby='helpId' value="#{id}" readonly)
+        small#helpId.form-text.text-muted Help text
+        label(for='book_id') Phone Number
+        input.form-control(type='phone' name='phno' id='' aria-describedby='helpId' placeholder='Enter Your Phone Number')
+        small#helpId.form-text.text-muted Help text
+        button.btn.btn-primary.add Rent
+        
